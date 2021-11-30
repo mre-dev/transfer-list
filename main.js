@@ -56,20 +56,56 @@ allRightsBtn.addEventListener('click', function(){
   clearDom();
   renderDom(leftList, rightList);
   checkSides();
-})
+});
+
 allLeftsBtn.addEventListener('click', function(){
   leftList = [...leftList,...rightList];
   rightList = [];
   clearDom();
   renderDom(leftList, rightList);
   checkSides();
-})
+});
+
 rightBtn.addEventListener('click', function(){
-  checkSides()
-})
+  document.querySelectorAll(".left-side .box").forEach(item => {
+    if(item.querySelector("input").checked == true){
+      rightList.push({
+        id: item.querySelector('input').id,
+        checked: false,
+        title: item.querySelector('label').textContent
+      });
+
+      leftList = leftList.filter(items => {
+        return (items.id != item.querySelector('input').id);
+      });
+
+    }
+  });
+  clearDom();
+  renderDom(leftList, rightList);
+  checkSides();
+});
+
 leftBtn.addEventListener('click', function(){
-  checkSides()
-})
+  document.querySelectorAll(".right-side .box").forEach(item => {
+    if(item.querySelector("input").checked == true){
+      leftList.push({
+        id: item.querySelector('input').id,
+        checked: false,
+        title: item.querySelector('label').textContent
+      });
+
+      rightList = rightList.filter(items => {
+        return (items.id != item.querySelector('input').id);
+      });
+
+    }
+  });
+  clearDom();
+  renderDom(leftList, rightList);
+  checkSides();
+});
+
 // Render Dom
 function renderDom(leftListToRender, rightListToRender) {
   leftListToRender.forEach((item) => {
@@ -85,8 +121,6 @@ function renderDom(leftListToRender, rightListToRender) {
           <label for="${item.id}">${item.title}</label>
           </div>`;
   });
-
-  registerEvents();
 }
 
 // Clear Dom
@@ -97,4 +131,23 @@ function clearDom() {
 }
 
 // Event
-function registerEvents() {}
+function checkSides() {
+  if(leftList.length == 0) {
+    allRightsBtn.classList.add("disabled");
+    rightBtn.classList.add("disabled");
+    allLeftsBtn.classList.remove("disabled");
+    leftBtn.classList.remove("disabled");
+  } else {
+    allRightsBtn.classList.remove("disabled");
+    rightBtn.classList.remove("disabled");
+  }
+  if(rightList.length == 0) {
+    allRightsBtn.classList.remove("disabled");
+    rightBtn.classList.remove("disabled");
+    allLeftsBtn.classList.add("disabled");
+    leftBtn.classList.add("disabled");
+  } else {
+    allLeftsBtn.classList.remove("disabled");
+    leftBtn.classList.remove("disabled");
+  }
+}
