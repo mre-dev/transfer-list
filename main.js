@@ -137,11 +137,7 @@ function checkSides() {
     rightBtn.classList.add("disabled");
     allLeftsBtn.classList.remove("disabled");
     leftBtn.classList.remove("disabled");
-  } else {
-    allRightsBtn.classList.remove("disabled");
-    rightBtn.classList.remove("disabled");
-  }
-  if(rightList.length == 0) {
+  } else if(rightList.length == 0)  {
     allRightsBtn.classList.remove("disabled");
     rightBtn.classList.remove("disabled");
     allLeftsBtn.classList.add("disabled");
@@ -149,5 +145,7 @@ function checkSides() {
   } else {
     allLeftsBtn.classList.remove("disabled");
     leftBtn.classList.remove("disabled");
+    allRightsBtn.classList.remove("disabled");
+    rightBtn.classList.remove("disabled");
   }
 }
