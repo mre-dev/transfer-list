@@ -6,4 +6,6 @@
 <p>A transfer list enables the user to move one or more list items between lists and is Fully responsive for use on desktop or mobile.</p>
 <h2></h2>
 <p>Screenshot : </p>
-<img src="assets/img/transfer-list-screenshot.png" alt="Weather Screenshot">
+<div align="center">
+  <img src="assets/img/transfer-list-screenshot.png" alt="Weather Screenshot">
+</div>
