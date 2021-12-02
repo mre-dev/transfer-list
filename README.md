@@ -7,5 +7,5 @@
 <h2></h2>
 <p>Screenshot : </p>
 <div align="center">
-  <img src="assets/img/transfer-list-screenshot.png" alt="Weather Screenshot">
+  <img src="assets/img/transfer-list-screenshot.png" alt="Transfer List Screenshot">
 </div>
