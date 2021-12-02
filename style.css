@@ -122,5 +122,7 @@ html {
 @media screen and (max-height: 400px) {
     .side {
         height: 25rem;
+        margin-bottom: 1.5rem;
+        margin-top: 1.5rem;
     }
 }
