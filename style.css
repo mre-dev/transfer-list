@@ -1,80 +1,126 @@
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
+
+html {
+  font-size: 62.5%;
+}
+
 .container {
-  min-height: 100vh;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 30px;
-  background-color: #eee;
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    background-color: #eee;
 }
+
 .side {
-  width: 300px;
-  height: 400px;
-  border: 1px solid #ccc;
-  background-color: #fff;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  padding: 15px;
-  border-radius: 5px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-  overflow-y: auto;
+    width: 30rem;
+    height: 40rem;
+    border: 0.1rem solid #ccc;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
 }
+
 .box {
-  width: 100%;
-  border-radius: 5px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 20px;
-  padding: 0 10px;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    width: 100%;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 2rem;
+    padding: 0 1rem;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
+
 .box:hover {
-  background-color: #f5f6f6;
+    background-color: #f5f6f6;
 }
+
 .box input {
-  width: 17px;
-  height: 17px;
+    width: 1.7rem;
+    height: 1.7rem;
 }
+
 .box label {
-  width: 100%;
-  padding: 10px 0;
-  cursor: pointer;
+    width: 100%;
+    padding: 1rem 0;
+    cursor: pointer;
 }
+
 .mid-side {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
 }
+
 .mid-side * {
-  padding: 10px;
-  border-radius: 50%;
-  width: 40px;
-  border: 1px solid #2196f3;
-  height: 40px;
-  cursor: pointer;
-  color: #2196f3;
-  font-size: 16px;
-  font-weight: bold;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    padding: 1rem;
+    border-radius: 50%;
+    width: 4rem;
+    border: 0.1rem solid #2196f3;
+    height: 4rem;
+    cursor: pointer;
+    color: #2196f3;
+    font-size: 1.6rem;
+    font-weight: bold;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
+
 .mid-side *:hover {
-  background-color: #2196f3;
-  color: #fff;
+    background-color: #2196f3;
+    color: #fff;
 }
+
 .disabled {
-  border-color: #ccc;
-  color: #ccc;
-  pointer-events: none;
+    border-color: #ccc;
+    color: #ccc;
+    pointer-events: none;
 }
+
 .disabled:hover {
-  color: #ccc;
-  background-color: unset;
+    color: #ccc;
+    background-color: unset;
+}
+
+@media screen and (max-width: 700px) {
+    .container {
+        flex-direction: column;
+        padding-top: 1.5rem;
+    }
+
+    .mid-side {
+        flex-direction: row;
+    }
+
+    .mid-side button {
+        transform: rotate(90deg);
+    }
+
+    .side {
+        height: 25rem;
+    }
+}
+
+@media screen and (max-width: 280px) {
+    .side {
+        width: 20rem;
+    }
+}
+
+@media screen and (max-height: 400px) {
+    .side {
+        height: 25rem;
+    }
 }
